@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>   
+	<meta charset="UTF-8">   
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">   
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">   
+	<link rel="stylesheet" href="/css/estiloI.css" type="text/css">
+	<title>Ingreso</title>
+</head>
+<body>
+	<header class="header">
+	    <h2><a href="/inicios/principal" class="logo"></a></h2>
+	</header>
+    <div class="container-page" id="Container">
+        <div class="login-container" id="LoginContainer">
+            <h1 class="title">Cuenta</h1>
+            <form th:action="@{/clientes/buscarPorCorreo}" th:object="${cliente}" th:method="GET">
+            
+                <div class="input-line-container">
+                    <span class="name-input">Correo</span>
+                    <input type="text" name="Correo con el que se registro" class="input-line" id="correo" th:field="${cliente.correo}">
+                </div>
+                <div class="input-line-container">
+                    <span class="name-input">Contraseña</span>
+                    <input type="password" name="Contraseña" class="input-line" id="contrasenia">
+                </div>
+                <input type="button" value="Ingresar" class="button-login">
+                <div id="pregunta" class="link">
+                	<p>¿No tienes cuenta?</p>
+                </div>
+                <div id="registrar" class="link">
+                	<ul>
+						<li><a href="/clientes/registro">Registrate aqui</a></li>
+					</ul>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    
+</body>
+
+</html>
